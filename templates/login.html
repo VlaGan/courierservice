@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="session center">
+    <div class="left">
+    </div>
+    <form action="" class="log-in " autocomplete="off" method="post">
+      <h4>Форма входу</h4>
+        {% if message != '' %}
+            <p class="fs-5 text-muted">{{ message }}</p>
+        {% endif %}
+
+      <div class="floating-label">
+        <input placeholder="Введіть логін" name="login" id="email" autocomplete="off">
+        <label for="email">Логін:</label>
+
+      </div>
+      <div class="floating-label">
+        <input placeholder="Введіть пароль" type="password" name="password" id="password" autocomplete="off">
+        <label for="password">Пароль:</label>
+      </div>
+
+        <div class="floating-label">
+            <input type="submit" class="btn btn-alert left" value="Увійти">
+        </div>
+        <div class="floating-label">
+            <label>Не маєте облікового запису?<a href="/reg">Зареєструватися</a></label>
+        </div>
+
+    </form>
+  </div>
+{% endblock %}

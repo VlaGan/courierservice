@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not message[1] == 1 %}
+
+  <div class="session center">
+    <div class="left">
+    </div>
+    <form action="" class="log-in " autocomplete="off" method="post">
+            <h3>Заповніть форму замовлення:</h3>
+          <div class="floating-label">
+              <input type="text" id="what" name="what" placeholder="Введіть бажаний товар" autocomplete="off"><br>
+
+              <input type="text" id="towhere" name="towhere" placeholder="Місце доставки" autocomplete="off"><br>
+
+              <input type="text" id="fromwhere" name="fromwhere" placeholder="Замовити з закладу..." autocomplete="off"><br>
+
+
+              <input type="text" id="price" name="price" placeholder="Вартість" autocomplete="off"><br>
+
+              <p></p>
+              <div class="floating-label">
+                    <input type="submit" class="btn btn-alert left" value="Замовити">
+              </div>
+          </div>
+    </form>
+  </div>
+{% else %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal" style="color:#fff">Ви вже робили замовлення!</h1>
+        <a href="/personal_office" style="color:#fff">Особистий кабінет</a>
+    </div>
+
+{% endif %}
+{% endblock %}

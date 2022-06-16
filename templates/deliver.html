@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <div class="center border-bottom text-center">
+    <form>
+        {% if orders != None and button == '' %}
+            {% for item in orders %}
+            <div>
+                <h2>{{item}}</h2>
+                <a href="/deliver?login={{login}}&id={{item[0]}}">Взяти замовлення</a><br>
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% if button != '' %}
+            <a href='/deliver?butid={{button}}&login={{login}}'>Замовлення виконано</a><br>
+        {% endif %}
+    </form>
+        </div>
+</center>
+{% endblock %}
